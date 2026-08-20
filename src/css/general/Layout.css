@@ -1,0 +1,10 @@
+.flex-2h {
+    display: flex;
+    justify-content: space-between;
+}
+
+.flex-2v {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
