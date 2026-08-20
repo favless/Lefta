@@ -2,6 +2,7 @@ import { use, useState } from "react";
 
 import Header from "./components/sections/Header";
 import SideMenu from "./components/sections/SideMenu";
+import InfoMenu from "./components/sections/InfoMenu";
 
 import Icon from "./components/tools/Icon";
 import TabButton from "./components/buttons/TabButton";
@@ -20,9 +21,7 @@ function App() {
       <main>
         <SideMenu />
         <MainMenu />
-        <div className="infomenu">
-          <div></div>
-        </div>
+        <InfoMenu />
       </main>
     </>
   );
