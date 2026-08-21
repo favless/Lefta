@@ -1,16 +1,18 @@
 import style from "../../css/DayEntry.module.css";
 
 type dayProps = {
-  day: number;
+  date: string;
   focused: boolean;
 };
 
 function DayEntry(props: dayProps) {
+  const day = props.date.split("-")[2];
+
   return (
     <div
       className={`${style.container} ${!props.focused ? style.unfocused : ""}`}
     >
-      <span>{props.day}</span>
+      <span>{day}</span>
     </div>
   );
 }

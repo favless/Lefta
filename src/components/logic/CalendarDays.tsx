@@ -16,6 +16,10 @@ function CalendarDays(props: CalendarProps) {
     0,
   ).getDate();
 
+  function formatDate(year: number, month: number, day: number) {
+    return `${year}-${String(month + 1).padStart(2, "0")}-${String(day).padStart(2, "0")}`;
+  }
+
   const days = [];
   const maxDays = 42;
 
@@ -29,19 +33,22 @@ function CalendarDays(props: CalendarProps) {
 
     for (let i = 0; i < firstDay; i++) {
       const day = daysInPreviousMonth - firstDay + i + 1;
-      days.push(<DayEntry key={`prev-${i}`} day={day} focused={false} />);
+      const date = formatDate(props.selectedYear, props.selectedMonth, day);
+      days.push(<DayEntry key={`prev-${i}`} date={date} focused={false} />);
     }
   }
 
   // fill in month
   for (let i = 1; i <= daysInMonth; i++) {
-    days.push(<DayEntry key={`current-${i}`} day={i} focused={true} />);
+    const date = formatDate(props.selectedYear, props.selectedMonth, i);
+    days.push(<DayEntry key={`current-${i}`} date={date} focused={true} />);
   }
 
   // fill in after month
   const remainingDays = 42 - (daysInMonth + firstDay);
   for (let i = 0; i < remainingDays; i++) {
-    days.push(<DayEntry key={`after-${i}`} day={i + 1} focused={false} />);
+    const date = formatDate(props.selectedYear, props.selectedMonth, i + 1);
+    days.push(<DayEntry key={`after-${i}`} date={date} focused={false} />);
   }
 
   return <div className="days">{days}</div>;
