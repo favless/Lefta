@@ -1,0 +1,11 @@
+.container {
+    background-color: var(--bg);
+}
+
+.unfocused {
+    background-color: color-mix(in srgb, var(--bg), black 4%);
+}
+
+.unfocused span {
+    opacity: 50%;
+}

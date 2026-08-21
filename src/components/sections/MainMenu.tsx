@@ -1,5 +1,5 @@
 import MonthArrow from "../buttons/MonthArrow";
-import CalendarDay from "../CalendarDay";
+import CalendarDays from "../logic/CalendarDays";
 
 import { useState } from "react";
 
@@ -14,15 +14,25 @@ function MainMenu() {
     { month: "long", year: "numeric" },
   );
 
+  function incrementMonth(increment: boolean) {
+    const newDate = new Date(
+      selectedYear,
+      selectedMonth + (increment ? 1 : -1),
+    );
+
+    setSelectedMonth(newDate.getMonth());
+    setSelectedYear(newDate.getFullYear());
+  }
+
   return (
     <div className="mainmenu">
       <div className="container">
         <div className="calendar-header flex-2v">
           <div className="header-controls">
             <div className="month-selector">
-              <MonthArrow increment={false} />
+              <MonthArrow increment={false} incrementMonth={incrementMonth} />
+              <MonthArrow increment={true} incrementMonth={incrementMonth} />
               <span>{monthDisplay}</span>
-              <MonthArrow increment={true} />
             </div>
             <div className="buttons">
               <button className="add-expense">+ Expense</button>
@@ -46,9 +56,10 @@ function MainMenu() {
             <span>Saturday</span>
             <span>Sunday</span>
           </div>
-          <div className="days">
-            <CalendarDay day={2} total={100} />
-          </div>
+          <CalendarDays
+            selectedMonth={selectedMonth}
+            selectedYear={selectedYear}
+          />
         </div>
       </div>
     </div>

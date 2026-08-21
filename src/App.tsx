@@ -7,7 +7,7 @@ import InfoMenu from "./components/sections/InfoMenu";
 import Icon from "./components/tools/Icon";
 import TabButton from "./components/buttons/TabButton";
 import MonthArrow from "./components/buttons/MonthArrow";
-import CalendarDay from "./components/CalendarDay";
+import CalendarDay from "./components/logic/DayEntry";
 
 import "./App.css";
 import "./css/general/Layout.css";
