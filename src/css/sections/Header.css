@@ -21,7 +21,7 @@ header .left {
 
 header .left svg {
     aspect-ratio: 1 / 1;
-    fill: var(--logo);
+    background: var(--logo);
     height: 100%;
 }
 

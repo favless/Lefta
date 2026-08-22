@@ -1,0 +1,19 @@
+.calendar {
+    mask: url("/src/assets/svg/calendar.svg") center / contain no-repeat;
+    -webkit-mask: url("/src/assets/svg/calendar.svg") center / contain no-repeat;
+}
+
+.settings {
+    mask: url("/src/assets/svg/cog-svgrepo-com.svg") center / contain no-repeat;
+    -webkit-mask: url("/src/assets/svg/cog-svgrepo-com.svg") center / contain no-repeat;
+}
+
+.lefta {
+    mask: url("/src/assets/svg/icon-lefta.svg") center / contain no-repeat;
+    -webkit-mask: url("/src/assets/svg/icon-lefta.svg") center / contain no-repeat;
+}
+
+.money-bill {
+    mask: url("/src/assets/svg/money-bill.svg") center / contain no-repeat;
+    -webkit-mask: url("/src/assets/svg/money-bill.svg") center / contain no-repeat;
+}

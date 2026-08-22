@@ -11,3 +11,7 @@ main > .sidemenu .sidemenu-container {
     flex-direction: column;
     gap: 10px;
 }
+
+main > .sidemenu svg {
+    background: var(--text-s);
+}
