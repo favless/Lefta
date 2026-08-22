@@ -1,5 +1,7 @@
 import Icon from "../tools/Icon";
 
+import "../../css/sections/Header.css";
+
 function Header() {
   return (
     <header>

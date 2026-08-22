@@ -1,6 +1,8 @@
 import MonthArrow from "../buttons/MonthArrow";
 import CalendarDays from "../logic/CalendarDays";
 
+import "../../css/sections/MainMenu.css";
+
 import { useState } from "react";
 
 function MainMenu() {

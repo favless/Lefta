@@ -1,5 +1,7 @@
 import TabButton from "../buttons/TabButton";
 
+import "../../css/sections/SideMenu.css";
+
 function SideMenu() {
   return (
     <div className="sidemenu">

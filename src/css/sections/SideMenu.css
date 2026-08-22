@@ -1,0 +1,13 @@
+main > .sidemenu {
+    width: 200px;
+    background: linear-gradient(90deg, var(--sidemenu-gradient-start) 0%, var(--sidemenu-gradient-start) 80%, var(--sidemenu-gradient-end) 100%);
+}
+
+main > .sidemenu .sidemenu-container {
+    padding: 16px 10px;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
