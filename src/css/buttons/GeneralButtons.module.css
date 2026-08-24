@@ -10,6 +10,22 @@
     cursor: pointer;
 }
 
+.button svg {
+    background: var(--text);
+    height: 100%;
+    width: 100%;
+}
+
+.green {
+    background: var(--accent);
+    border: 1px solid var(--accent-border);
+    border-radius: 8px;
+
+    color: white;
+    
+    padding: 10px 20px;
+}
+
 .square {
     height: 50px;
     width: 50px;

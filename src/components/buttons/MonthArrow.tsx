@@ -7,12 +7,14 @@ type buttonProps = {
 };
 
 function MonthArrow(props: buttonProps) {
+  const icon = props.increment ? "angle-right" : "angle-left";
+
   return (
     <button
       className={`${style.button} ${style.square}`}
       onClick={() => props.incrementMonth(props.increment)}
     >
-      {props.increment ? ">" : "<"}
+      {<Icon type={icon} />}
     </button>
   );
 }

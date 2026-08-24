@@ -1,5 +1,6 @@
 import MonthArrow from "../buttons/MonthArrow";
 import CalendarDays from "../logic/CalendarDays";
+import AddExpense from "../buttons/AddExpense";
 
 import "../../css/sections/MainMenu.css";
 
@@ -36,8 +37,8 @@ function MainMenu() {
               <MonthArrow increment={true} incrementMonth={incrementMonth} />
               <span>{monthDisplay}</span>
             </div>
-            <div className="buttons">
-              <button className="add-expense">+ Expense</button>
+            <div>
+              <AddExpense text="+ Expense" for="" />
             </div>
           </div>
           <div className="header-info">
@@ -45,7 +46,7 @@ function MainMenu() {
               <span>$18.390</span>
               <p>Total expenses this month</p>
             </div>
-            <div>placeholder</div>
+            <div></div>
           </div>
         </div>
         <div className="calendar">

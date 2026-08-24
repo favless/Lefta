@@ -13,7 +13,32 @@
     -webkit-mask: url("/src/assets/svg/icon-lefta.svg") center / contain no-repeat;
 }
 
-.money-bill {
-    mask: url("/src/assets/svg/money-bill.svg") center / contain no-repeat;
-    -webkit-mask: url("/src/assets/svg/money-bill.svg") center / contain no-repeat;
+.money {
+    mask: url("/src/assets/svg/euro.svg") center / contain no-repeat;
+    -webkit-mask: url("/src/assets/svg/euro.svg") center / contain no-repeat;
+}
+
+.chart {
+    mask: url("/src/assets/svg/chart-line.svg") center / contain no-repeat;
+    -webkit-mask: url("/src/assets/svg/chart-line.svg") center / contain no-repeat;
+}
+
+.credit-card {
+    mask: url("/src/assets/svg/credit-card.svg") center / contain no-repeat;
+    -webkit-mask: url("/src/assets/svg/credit-card.svg") center / contain no-repeat;
+}
+
+.arrow-up {
+    mask: url("/src/assets/svg/arrow-up.svg") center / contain no-repeat;
+    -webkit-mask: url("/src/assets/svg/arrow-up.svg") center / contain no-repeat;
+}
+
+.angle-left {
+    mask: url("/src/assets/svg/angle-left.svg") center / contain no-repeat;
+    -webkit-mask: url("/src/assets/svg/angle-left.svg") center / contain no-repeat;
+}
+
+.angle-right {
+    mask: url("/src/assets/svg/angle-right.svg") center / contain no-repeat;
+    -webkit-mask: url("/src/assets/svg/angle-right.svg") center / contain no-repeat;
 }

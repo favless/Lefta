@@ -49,16 +49,6 @@ main .month-selector {
     gap: 10px;
 }
 
-main .add-expense {
-    background-color: var(--accent);
-    border: 1px solid var(--accent-border);
-    border-radius: 8px;
-    
-    font-size: 1rem;
-    padding: 10px 20px;
-    cursor: pointer;
-}
-
 main .header-info {
     display: flex;
     justify-content: space-between;

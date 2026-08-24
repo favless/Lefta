@@ -1,4 +1,4 @@
-import style from "../../css/DayEntry.module.css";
+import style from "../../css/logic/DayEntry.module.css";
 
 type dayProps = {
   date: string;
@@ -12,7 +12,7 @@ function DayEntry(props: dayProps) {
     <div
       className={`${style.container} ${!props.focused ? style.unfocused : ""}`}
     >
-      <span>{day}</span>
+      <span className={style.day}>{day}</span>
     </div>
   );
 }

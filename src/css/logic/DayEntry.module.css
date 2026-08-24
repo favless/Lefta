@@ -1,5 +1,13 @@
 .container {
     background-color: var(--bg);
+    
+    display: flex;
+    padding: 8px 12px;
+}
+
+.day {
+    font-size: 1rem;
+    font-weight: 600;
 }
 
 .unfocused {

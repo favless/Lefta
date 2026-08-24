@@ -1,0 +1,6 @@
+.overview {
+    padding: 14px;
+    row-gap: 16px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}

@@ -1,0 +1,32 @@
+.container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+
+    gap: 10px;
+}
+
+.icondiv {
+    height: 100%;
+    aspect-ratio: 1 / 1;
+
+    padding: 10px;
+    box-sizing: border-box;
+
+    background-color: var(--section-bg);
+    border-radius: 30%;
+}
+
+.icondiv svg {
+    height: 100%;
+    aspect-ratio: 1 / 1;
+
+    background: var(--text);
+}
+
+.text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
