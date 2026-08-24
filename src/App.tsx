@@ -1,5 +1,3 @@
-import { use, useState } from "react";
-
 import Header from "./components/sections/Header";
 import SideMenu from "./components/sections/SideMenu";
 import InfoMenu from "./components/sections/InfoMenu";

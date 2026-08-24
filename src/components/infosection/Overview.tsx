@@ -1,5 +1,4 @@
 import IconBox from "../tools/IconBox";
-import AddExpense from "../buttons/AddExpense";
 
 import general from "../../css/infosection/General.module.css";
 import style from "../../css/infosection/Overview.module.css";
