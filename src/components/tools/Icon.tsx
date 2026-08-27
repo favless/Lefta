@@ -1,11 +1,18 @@
-import style from "../../css/tools/Icon.module.css";
-
 type iconProps = {
   type: string;
 };
 
 function Icon(props: iconProps) {
-  return <svg className={style[props.type]}></svg>;
+  const url = `../../src/assets/svg/${props.type}.svg`;
+
+  return (
+    <svg
+      style={{
+        mask: `url("${url}") center / contain no-repeat`,
+        WebkitMask: `url("${url}") center / contain no-repeats`,
+      }}
+    ></svg>
+  );
 }
 
 export default Icon;

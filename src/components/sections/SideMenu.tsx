@@ -7,8 +7,8 @@ function SideMenu() {
     <div className="sidemenu">
       <div className="sidemenu-container">
         <TabButton name="Calendar" icon="calendar" />
-        <TabButton name="Categories" icon="settings" />
-        <TabButton name="Settings" icon="settings" />
+        <TabButton name="Categories" icon="cog" />
+        <TabButton name="Settings" icon="cog" />
       </div>
     </div>
   );

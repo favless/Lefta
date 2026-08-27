@@ -10,8 +10,12 @@ function Overview() {
         <span>Month Overview</span>
       </div>
       <div className={`${general.info} ${style.overview}`}>
-        <IconBox icon="money" toptext="Total Expenses" bottomtext="$1,583.32" />
-        <IconBox icon="chart" toptext="Daily Average" bottomtext="$43.33" />
+        <IconBox icon="euro" toptext="Total Expenses" bottomtext="$1,583.32" />
+        <IconBox
+          icon="chart-line"
+          toptext="Daily Average"
+          bottomtext="$43.33"
+        />
         <IconBox
           icon="credit-card"
           toptext="Total Transactions"

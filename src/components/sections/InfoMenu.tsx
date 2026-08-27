@@ -1,7 +1,7 @@
 import "../../css/sections/InfoMenu.css";
 
-import Overview from "../infosection/Overview";
-import ExpenseList from "../infosection/ExpenseList";
+import Overview from "./Overview";
+import ExpenseList from "./ExpenseList";
 
 function InfoMenu() {
   return (
