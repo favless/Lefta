@@ -7,7 +7,7 @@ type buttonProps = {
 };
 
 function MonthArrow(props: buttonProps) {
-  const icon = props.increment ? "angle-right" : "angle-left";
+  const icon = props.increment ? "app/angle-right" : "app/angle-left";
 
   return (
     <button

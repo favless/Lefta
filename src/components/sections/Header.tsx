@@ -6,7 +6,7 @@ function Header() {
   return (
     <header>
       <div className="left">
-        <Icon type="lefta" />
+        <Icon type="app/icon-lefta" />
         <span>Lefta</span>
       </div>
       <div className="right">

@@ -6,9 +6,9 @@ function SideMenu() {
   return (
     <div className="sidemenu">
       <div className="sidemenu-container">
-        <TabButton name="Calendar" icon="calendar" />
-        <TabButton name="Categories" icon="cog" />
-        <TabButton name="Settings" icon="cog" />
+        <TabButton name="Calendar" icon="app/calendar" />
+        <TabButton name="Categories" icon="app/cog" />
+        <TabButton name="Settings" icon="app/cog" />
       </div>
     </div>
   );

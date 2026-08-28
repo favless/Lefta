@@ -1,8 +1,5 @@
-import type { Expense } from "../types/Expense";
-import { expenses } from "../data/expenses";
-
-export function loadExpenses(): Expense[] {
-  const saved = localStorage.getItem("expenses");
+export function loadData<T>(item: string): T[] {
+  const saved = localStorage.getItem(item);
 
   if (!saved) {
     return [];
@@ -11,6 +8,6 @@ export function loadExpenses(): Expense[] {
   return JSON.parse(saved);
 }
 
-export function saveExpenses(expenses: Expense[]) {
-    localStorage.setItem("expenses", JSON.stringify(expenses))
+export function saveData<T>(item: string, data: T[]) {
+    localStorage.setItem(item, JSON.stringify(data))
 }

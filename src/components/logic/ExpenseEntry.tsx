@@ -12,7 +12,7 @@ function ExpenseEntry(props: entryProps) {
     <div className={style.container}>
       <div className={style.left}>
         <div className={style["icon-container"]}>
-          <Icon type="money" />
+          <Icon type="app/euro" />
         </div>
         <div className={style["label-container"]}>
           <span>{props.name}</span>
