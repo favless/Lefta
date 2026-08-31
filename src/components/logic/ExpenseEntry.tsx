@@ -21,7 +21,7 @@ function ExpenseEntry(props: entryProps) {
         </div>
       </div>
       <div className={style.right}>
-        <span>$103.33</span>
+        <span>${props.price}</span>
       </div>
     </div>
   );

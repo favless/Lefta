@@ -28,6 +28,7 @@ function ExpenseList() {
             key={expense.id}
             name={expense.name}
             category={expense.category}
+            price={expense.amount}
           />
         ))}
         <ExpenseEntryPlus day="" />
