@@ -19,12 +19,6 @@
     gap: 10px;
 }
 
-.right {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-}
-
 .label-container {
     display: flex;
     flex-direction: column;
@@ -34,8 +28,8 @@
 .icon-container {
     height: 45px;
     width: 45px;
-    background-color: var(--accent);
-    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: var(--border-radius);
 
     display: flex;
     justify-content: center;
@@ -43,7 +37,7 @@
 }
 
 .icon-container svg {
-    background: var(--text);
+    background: var(--text-s);
     height: 70%;
     width: 70%;
 }

@@ -1,6 +1,6 @@
 import type { Expense } from "../types/Expense";
 
-export const expenses: Expense[] = [
+export const defaultExpenses: Expense[] = [
   {
     id: "1",
     date: "2026-08-24",

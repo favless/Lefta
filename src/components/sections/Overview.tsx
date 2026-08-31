@@ -1,7 +1,7 @@
 import IconBox from "../tools/IconBox";
 
 import general from "../../css/infosection/General.module.css";
-import style from "../../css/infosection/Overview.module.css";
+import style from "../../css/sections/Overview.module.css";
 
 function Overview() {
   return (

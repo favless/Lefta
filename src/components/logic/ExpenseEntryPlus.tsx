@@ -1,23 +1,22 @@
 import Icon from "../tools/Icon";
 
-import style from "../../css/logic/ExpenseEntryAdd.module.css";
+import style from "../../css/logic/ExpenseEntryPlus.module.css";
 
 type entryProps = {
-  name: string;
-  category: string;
+  day: string;
 };
 
-function ExpenseEntry(props: entryProps) {
+function ExpenseEntryPlus(props: entryProps) {
   return (
     <div className={style.container}>
       <div className={style.left}>
         <div className={style["icon-container"]}>
           <Icon type="app/plus" />
         </div>
-        <span className={style.label}></span>
+        <span className={style.label}>Add Expense</span>
       </div>
     </div>
   );
 }
 
-export default ExpenseEntry;
+export default ExpenseEntryPlus;

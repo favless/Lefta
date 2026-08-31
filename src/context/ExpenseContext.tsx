@@ -1,7 +1,7 @@
 import { createContext, useContext, useState } from "react";
 import type { Expense } from "../types/Expense";
 import { loadData } from "../utils/storage";
-import { expenses } from "../defaultdata/expenses";
+import { defaultExpenses } from "../defaultdata/expenses";
 
 type ExpenseContextType = {
   expenses: Expense[];
@@ -12,7 +12,7 @@ const ExpenseContext = createContext<ExpenseContextType | null>(null);
 
 export function ExpenseProvider({ children }: { children: React.ReactNode }) {
   const [expenses, setExpenses] = useState<Expense[]>(
-    loadData<Expense>("expenses"),
+    loadData<Expense>("expenses", defaultExpenses),
   );
 
   return (
@@ -20,4 +20,14 @@ export function ExpenseProvider({ children }: { children: React.ReactNode }) {
       {children}
     </ExpenseContext.Provider>
   );
+}
+
+export function useExpense() {
+  const context = useContext(ExpenseContext);
+
+  if (!context) {
+    throw new Error("useExpense must be used within ExpenseProvider");
+  }
+
+  return context;
 }

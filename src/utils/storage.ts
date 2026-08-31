@@ -1,8 +1,8 @@
-export function loadData<T>(item: string): T[] {
+export function loadData<T>(item: string, defaultData: T[]): T[] {
   const saved = localStorage.getItem(item);
 
   if (!saved) {
-    return [];
+    return defaultData;
   }
 
   return JSON.parse(saved);

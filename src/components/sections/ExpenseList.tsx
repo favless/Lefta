@@ -1,7 +1,8 @@
 import ExpenseEntry from "../logic/ExpenseEntry";
+import ExpenseEntryPlus from "../logic/ExpenseEntryPlus";
 
 import general from "../../css/infosection/General.module.css";
-import style from "../../css/infosection/ExpenseList.module.css";
+import style from "../../css/sections/ExpenseList.module.css";
 
 function ExpenseList() {
   return (
@@ -12,6 +13,7 @@ function ExpenseList() {
       </div>
       <div className={`${general.info} ${style.list}`}>
         <ExpenseEntry name="expensename" category="something" />
+        <ExpenseEntryPlus day="" />
       </div>
     </div>
   );
