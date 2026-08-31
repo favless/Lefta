@@ -3,17 +3,32 @@
     
     display: flex;
     padding: 8px 12px;
+    cursor: pointer;
 }
 
 .day {
     font-size: 1rem;
     font-weight: 600;
+
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
 }
 
 .unfocused {
     background-color: color-mix(in srgb, var(--bg), black 4%);
+    cursor: no-drop;
 }
 
-.unfocused span {
+.unfocused .day {
     opacity: 50%;
+}
+
+.selected {
+    background-color: color-mix(in srgb, var(--accent) 20%, var(--bg) 80%);
+}
+
+.selected .day {
+    background-color: var(--accent);
+    color: white;
 }
