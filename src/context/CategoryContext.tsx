@@ -1,7 +1,7 @@
 import { createContext, useContext, useState } from "react";
 import type { Category } from "../types/Category";
 import { loadData } from "../utils/storage";
-import { defaultCategories } from "../defaultdata/categories";
+import { defaultCategories } from "../defaultdata/categories.ts";
 
 type CategoryContextType = {
   categories: Category[];
@@ -22,7 +22,7 @@ export function CategoryProvider({ children }: { children: React.ReactNode }) {
   );
 }
 
-export function useCategory() {
+export function useCategories() {
   const context = useContext(CategoryContext);
 
   if (!context) {

@@ -1,7 +1,7 @@
 import { createContext, useContext, useState } from "react";
 import type { Expense } from "../types/Expense";
 import { loadData } from "../utils/storage";
-import { defaultExpenses } from "../defaultdata/expenses";
+import { defaultExpenses } from "../defaultdata/expenses.ts";
 
 type ExpenseContextType = {
   expenses: Expense[];
@@ -22,7 +22,7 @@ export function ExpenseProvider({ children }: { children: React.ReactNode }) {
   );
 }
 
-export function useExpense() {
+export function useExpenses() {
   const context = useContext(ExpenseContext);
 
   if (!context) {

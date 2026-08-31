@@ -1,8 +1,8 @@
 import { createContext, useContext, useState } from "react";
 
 type SessionContextType = {
-  selectedDay: string;
-  setSelectedDay: React.Dispatch<React.SetStateAction<string>>;
+  selectedDate: string;
+  setSelectedDate: React.Dispatch<React.SetStateAction<string>>;
   selectedTab: number;
   setSelectedTab: React.Dispatch<React.SetStateAction<number>>;
 };
@@ -10,12 +10,12 @@ type SessionContextType = {
 const SessionContext = createContext<SessionContextType | null>(null);
 
 export function SessionProvider({ children }: { children: React.ReactNode }) {
-  const [selectedDay, setSelectedDay] = useState<string>("");
+  const [selectedDate, setSelectedDate] = useState<string>("");
   const [selectedTab, setSelectedTab] = useState<number>(0);
 
   return (
     <SessionContext.Provider
-      value={{ selectedDay, setSelectedDay, selectedTab, setSelectedTab }}
+      value={{ selectedDate, setSelectedDate, selectedTab, setSelectedTab }}
     >
       {children}
     </SessionContext.Provider>

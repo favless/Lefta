@@ -5,6 +5,7 @@ import style from "../../css/logic/ExpenseEntry.module.css";
 type entryProps = {
   name: string;
   category: string;
+  price: number;
 };
 
 function ExpenseEntry(props: entryProps) {
@@ -21,7 +22,6 @@ function ExpenseEntry(props: entryProps) {
       </div>
       <div className={style.right}>
         <span>$103.33</span>
-        <span>9:43 PM</span>
       </div>
     </div>
   );
