@@ -1,5 +1,5 @@
 import ExpenseEntry from "../logic/ExpenseEntry";
-import ExpenseEntryPlus from "../logic/ExpenseEntryPlus";
+import ExpenseEntryAdd from "../logic/ExpenseEntryAdd";
 
 import general from "../../css/infosection/General.module.css";
 import style from "../../css/sections/ExpenseList.module.css";
@@ -31,7 +31,7 @@ function ExpenseList() {
             price={expense.amount}
           />
         ))}
-        <ExpenseEntryPlus day="" />
+        <ExpenseEntryAdd />
       </div>
     </div>
   );

@@ -1,6 +1,6 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import type { Category } from "../types/Category";
-import { loadData } from "../utils/storage";
+import { loadData, saveData } from "../utils/storage";
 import { defaultCategories } from "../defaultdata/categories.ts";
 
 type CategoryContextType = {
@@ -14,6 +14,10 @@ export function CategoryProvider({ children }: { children: React.ReactNode }) {
   const [categories, setCategories] = useState<Category[]>(
     loadData<Category>("categories", defaultCategories),
   );
+
+  useEffect(() => {
+    saveData("categories", categories);
+  }, [categories]);
 
   return (
     <CategoryContext.Provider value={{ categories, setCategories }}>

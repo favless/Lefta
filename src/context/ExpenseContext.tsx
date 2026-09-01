@@ -1,6 +1,6 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import type { Expense } from "../types/Expense";
-import { loadData } from "../utils/storage";
+import { loadData, saveData } from "../utils/storage";
 import { defaultExpenses } from "../defaultdata/expenses.ts";
 
 type ExpenseContextType = {
@@ -14,6 +14,10 @@ export function ExpenseProvider({ children }: { children: React.ReactNode }) {
   const [expenses, setExpenses] = useState<Expense[]>(
     loadData<Expense>("expenses", defaultExpenses),
   );
+
+  useEffect(() => {
+    saveData("expenses", expenses);
+  }, [expenses]);
 
   return (
     <ExpenseContext.Provider value={{ expenses, setExpenses }}>
