@@ -14,8 +14,6 @@ function ExpenseList() {
     (expense) => expense.date === selectedDate,
   );
 
-  console.log(expenses);
-
   return (
     <div className={general.container}>
       <div className={general.header}>
