@@ -24,7 +24,7 @@ function ExpenseEntry(props: entryProps) {
           className={style["icon-container"]}
           style={{ backgroundColor: `rgba(${category?.color}, 0.2)` }}
         >
-          <Icon type={"app/euro"} />
+          <Icon type={category?.icon} />
         </div>
         <div className={style["label-container"]}>
           <span>{props.name}</span>

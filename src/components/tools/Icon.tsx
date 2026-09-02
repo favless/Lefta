@@ -1,9 +1,11 @@
 type iconProps = {
-  type: string;
+  type?: string;
 };
 
 function Icon(props: iconProps) {
-  const url = `../../src/assets/svg/${props.type}.svg`;
+  const url = props.type
+    ? `../../src/assets/svg/${props.type}.svg`
+    : "app/question-mark";
 
   return (
     <svg
