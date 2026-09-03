@@ -22,12 +22,7 @@ function ExpenseList() {
       </div>
       <div className={`${general.info} ${style.list}`}>
         {dayExpenses.map((expense) => (
-          <ExpenseEntry
-            key={expense.id}
-            name={expense.name}
-            category={expense.category}
-            price={expense.amount}
-          />
+          <ExpenseEntry key={expense.id} expense={expense} />
         ))}
         <ExpenseEntryAdd />
       </div>

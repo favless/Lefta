@@ -40,11 +40,9 @@ function ExpenseEntryAdd() {
       <div
         className={style.prompt}
         style={menuOpened ? { display: "none" } : { display: "flex" }}
+        onClick={() => setMenuOpened(true)}
       >
-        <div
-          className={style["icon-container"]}
-          onClick={() => setMenuOpened(true)}
-        >
+        <div className={style["icon-container"]}>
           <Icon type="app/plus" />
         </div>
         <span className={style.label}>Add Expense</span>

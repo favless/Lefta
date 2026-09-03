@@ -2,17 +2,16 @@ import Icon from "../tools/Icon";
 
 import style from "../../css/logic/ExpenseEntry.module.css";
 import { useCategories } from "../../context/CategoryContext";
+import type { Expense } from "../../types/Expense";
 
 type entryProps = {
-  name: string;
-  category: string;
-  price: number;
+  expense: Expense;
 };
 
 function ExpenseEntry(props: entryProps) {
   const { categories } = useCategories();
   const category = categories.find(
-    (category) => category.name === props.category,
+    (category) => category.name === props.expense.category,
   );
 
   console.log(category);
@@ -27,12 +26,12 @@ function ExpenseEntry(props: entryProps) {
           <Icon type={category?.icon} />
         </div>
         <div className={style["label-container"]}>
-          <span>{props.name}</span>
-          <span>{props.category}</span>
+          <span>{props.expense.name}</span>
+          <span>{props.expense.category}</span>
         </div>
       </div>
       <div className={style.right}>
-        <span>${props.price}</span>
+        <span>${props.expense.amount}</span>
       </div>
     </div>
   );
