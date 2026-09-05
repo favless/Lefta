@@ -14,7 +14,7 @@ type entryProps = {
 function ExpenseEntryForm(props: entryProps) {
   const { categories } = useCategories();
 
-  const { updateExpense } = useExpenses();
+  const { updateExpense, deleteExpense } = useExpenses();
 
   const [name, setName] = useState(props.expense.name);
   const [category, setCategory] = useState(props.expense.category);
@@ -30,6 +30,11 @@ function ExpenseEntryForm(props: entryProps) {
     };
 
     updateExpense(newExpense);
+    props.stopEditing();
+  }
+
+  function submitDelete() {
+    deleteExpense(props.expense.id);
     props.stopEditing();
   }
 
@@ -67,6 +72,9 @@ function ExpenseEntryForm(props: entryProps) {
           value={amount}
           onChange={(e) => setAmount(Number(e.target.value))}
         />
+        <div className={style["icon-container"]} onClick={() => submitDelete()}>
+          <Icon type="app/delete" />
+        </div>
       </div>
     </div>
   );

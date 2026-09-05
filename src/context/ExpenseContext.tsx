@@ -7,6 +7,7 @@ type ExpenseContextType = {
   expenses: Expense[];
   setExpenses: React.Dispatch<React.SetStateAction<Expense[]>>;
   updateExpense: (expense: Expense) => void;
+  deleteExpense: (id: string) => void;
 };
 
 const ExpenseContext = createContext<ExpenseContextType | null>(null);
@@ -24,12 +25,18 @@ export function ExpenseProvider({ children }: { children: React.ReactNode }) {
     );
   }
 
+  function deleteExpense(id: string) {
+    setExpenses((prev) => prev.filter((expense) => expense.id !== id));
+  }
+
   useEffect(() => {
     saveData("expenses", expenses);
   }, [expenses]);
 
   return (
-    <ExpenseContext.Provider value={{ expenses, setExpenses, updateExpense }}>
+    <ExpenseContext.Provider
+      value={{ expenses, setExpenses, updateExpense, deleteExpense }}
+    >
       {children}
     </ExpenseContext.Provider>
   );
