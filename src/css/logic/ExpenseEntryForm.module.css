@@ -1,34 +1,3 @@
-.container {
-    width: 100%;
-    padding: 10px 15px;
-    box-sizing: border-box;
-
-    background-color: rgba(0, 0, 0, 0.025);
-    border-radius: var(--border-radius);
-}
-
-.container > div {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.clickable {
-    cursor: pointer;
-}
-
-.clickable:hover {
-    background-color: rgba(0, 0, 0, 0.06);
-}
-
-.clickable:hover .icon-container:first-child {
-    display: none;
-}
-
-.clickable:hover .edit {
-    display: flex;
-}
-
 .left {
     display: flex;
     justify-content: center;
@@ -61,10 +30,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-}
 
-.edit {
-    display: none;
+    cursor: pointer;
 }
 
 .icon-container svg {
