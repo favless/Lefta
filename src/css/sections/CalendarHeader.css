@@ -1,0 +1,47 @@
+main .calendar-header {
+    background-color: white;
+    height: 20%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+main .header-controls {
+    display: flex;
+    justify-content: space-between;
+    padding: 16px
+}
+
+main .header-controls > div:first-of-type > span {
+    font-size: 2rem;
+}
+
+main .month-selector {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+main .header-info {
+    display: flex;
+    justify-content: space-between;
+}
+
+main .month-total {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    padding: 10px 16px;
+    gap: 8px;
+}
+
+main .month-total > span {
+    font-size: 2.5rem;
+    color: var(--accent);
+}
+
+main .month-total > p {
+    color: var(--text-s);
+}

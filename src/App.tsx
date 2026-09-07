@@ -14,7 +14,7 @@ function App() {
       <main>
         <SideMenu />
         <MainMenu />
-        <InfoMenu day="" />
+        <InfoMenu />
       </main>
     </>
   );

@@ -1,6 +1,8 @@
 import MonthArrow from "../buttons/MonthArrow";
 import AddExpense from "../buttons/AddExpense";
 
+import "../../css/sections/CalendarHeader.css";
+
 type headerProps = {
   selectedMonth: number;
   selectedYear: number;

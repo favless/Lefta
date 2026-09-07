@@ -20,7 +20,7 @@ function ExpenseEntry(props: entryProps) {
 
   function Entry() {
     return (
-      <div onClick={() => setEditing(true)} className={style.clickable}>
+      <div onClick={() => setEditing(true)}>
         <div className={style.left}>
           <div
             className={style["icon-container"]}
@@ -51,7 +51,7 @@ function ExpenseEntry(props: entryProps) {
   }
 
   return (
-    <div className={style.container}>
+    <div className={`${style.container} ${editing ? "" : style.clickable}`}>
       {editing ? (
         <ExpenseEntryForm expense={props.expense} stopEditing={stopEditing} />
       ) : (

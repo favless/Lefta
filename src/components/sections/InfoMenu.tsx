@@ -3,11 +3,7 @@ import "../../css/sections/InfoMenu.css";
 import Overview from "./Overview";
 import ExpenseList from "./ExpenseList";
 
-type infoProps = {
-  day: string;
-};
-
-function InfoMenu(props: infoProps) {
+function InfoMenu() {
   return (
     <div className="infomenu">
       <Overview />
