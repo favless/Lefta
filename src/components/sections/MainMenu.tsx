@@ -4,22 +4,13 @@ import CalendarHeader from "./CalendarHeader";
 import "../../css/sections/MainMenu.css";
 
 import { useState } from "react";
+import { useSession } from "../../context/SessionContext";
 
 function MainMenu() {
-  const today = new Date();
-
-  const [selectedMonth, setSelectedMonth] = useState(today.getMonth());
-  const [selectedYear, setSelectedYear] = useState(today.getFullYear());
-
   return (
     <div className="mainmenu">
       <div className="container">
-        <CalendarHeader
-          selectedMonth={selectedMonth}
-          selectedYear={selectedYear}
-          setSelectedMonth={setSelectedMonth}
-          setSelectedYear={setSelectedYear}
-        />
+        <CalendarHeader />
         <div className="calendar">
           <div className="split">
             <span>Monday</span>
@@ -30,10 +21,7 @@ function MainMenu() {
             <span>Saturday</span>
             <span>Sunday</span>
           </div>
-          <CalendarDays
-            selectedMonth={selectedMonth}
-            selectedYear={selectedYear}
-          />
+          <CalendarDays />
         </div>
       </div>
     </div>

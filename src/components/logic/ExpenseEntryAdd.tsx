@@ -21,7 +21,7 @@ function ExpenseEntryAdd() {
   function submitExpense() {
     const newExpense: Expense = {
       id: String(crypto.randomUUID()),
-      date: selectedDate,
+      date: selectedDate.toISOString().slice(0, 10),
       amount: Number(amount),
       name: name,
       category: category,

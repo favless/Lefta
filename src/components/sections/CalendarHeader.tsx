@@ -2,28 +2,23 @@ import MonthArrow from "../buttons/MonthArrow";
 import AddExpense from "../buttons/AddExpense";
 
 import "../../css/sections/CalendarHeader.css";
+import { useSession } from "../../context/SessionContext";
 
-type headerProps = {
-  selectedMonth: number;
-  selectedYear: number;
-  setSelectedMonth: React.Dispatch<React.SetStateAction<number>>;
-  setSelectedYear: React.Dispatch<React.SetStateAction<number>>;
-};
+function CalendarHeader() {
+  const { selectedDate, setSelectedDate } = useSession();
 
-function CalendarHeader(props: headerProps) {
-  const monthDisplay = new Date(
-    props.selectedYear,
-    props.selectedMonth,
-  ).toLocaleString("default", { month: "long", year: "numeric" });
+  const year = selectedDate.getFullYear();
+  const month = selectedDate.getMonth();
+
+  const monthDisplay = selectedDate.toLocaleString("default", {
+    month: "long",
+    year: "numeric",
+  });
 
   function incrementMonth(increment: boolean) {
-    const newDate = new Date(
-      props.selectedYear,
-      props.selectedMonth + (increment ? 1 : -1),
-    );
+    const newDate = new Date(year, month + (increment ? 1 : -1));
 
-    props.setSelectedMonth(newDate.getMonth());
-    props.setSelectedYear(newDate.getFullYear());
+    setSelectedDate(newDate);
   }
 
   return (

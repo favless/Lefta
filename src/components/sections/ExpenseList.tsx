@@ -8,16 +8,18 @@ import { useExpenses } from "../../context/ExpenseContext";
 
 function ExpenseList() {
   const { selectedDate } = useSession();
+  const dateString = selectedDate.toISOString().slice(0, 10);
   const { expenses } = useExpenses();
 
-  const dayExpenses = expenses.filter(
-    (expense) => expense.date === selectedDate,
-  );
+  const dayExpenses = expenses.filter((expense) => expense.date === dateString);
 
   return (
     <div className={general.container}>
       <div className={general.header}>
-        <span>Expenses on {selectedDate}</span>
+        <span>
+          Expenses on{" "}
+          {selectedDate.toLocaleDateString("default", { weekday: "long" })}
+        </span>
         <span>108.32$</span>
       </div>
       <div className={`${general.info} ${style.list}`}>

@@ -10,7 +10,8 @@ type dayProps = {
 function DayEntry(props: dayProps) {
   const day = props.date.split("-")[2];
   const { selectedDate, setSelectedDate } = useSession();
-  const selected = selectedDate === props.date;
+  const selectedDateString = selectedDate.toISOString().slice(0, 10);
+  const selected = selectedDateString === props.date;
 
   const { expenses } = useExpenses();
   const dayTotal = Number(
@@ -23,7 +24,7 @@ function DayEntry(props: dayProps) {
   return (
     <div
       className={`${style.container} ${!props.focused ? style.unfocused : ""} ${selected ? style.selected : ""}`}
-      onClick={() => setSelectedDate(props.date)}
+      onClick={() => setSelectedDate(new Date(props.date))}
     >
       <span className={style.day}>{day}</span>
       <span className={style.total}>{dayTotal <= 0 ? "" : `$${dayTotal}`}</span>

@@ -1,14 +1,13 @@
+import { useSession } from "../../context/SessionContext";
 import DayEntry from "./DayEntry";
 
-type CalendarProps = {
-  selectedMonth: number;
-  selectedYear: number;
-};
+function CalendarDays() {
+  const { selectedDate, monthDisplay } = useSession();
+  const year = selectedDate.getFullYear();
+  const month = selectedDate.getMonth();
 
-function CalendarDays(props: CalendarProps) {
   // convert into Monday-based value instead of the default JS Sunday-based
-  const firstDay =
-    (new Date(props.selectedYear, props.selectedMonth, 1).getDay() + 6) % 7;
+  const firstDay = (new Date(year, month, 1).getDay() + 6) % 7;
 
   function formatDate(year: number, month: number, day: number) {
     return `${year}-${String(month + 1).padStart(2, "0")}-${String(day).padStart(2, "0")}`;
@@ -17,11 +16,7 @@ function CalendarDays(props: CalendarProps) {
   const days = [];
   const maxDays = 42;
 
-  const startDate = new Date(
-    props.selectedYear,
-    props.selectedMonth,
-    1 - firstDay,
-  );
+  const startDate = new Date(year, month, 1 - firstDay);
 
   for (let i = 0; i < maxDays; i++) {
     const date = new Date(startDate);
@@ -37,7 +32,7 @@ function CalendarDays(props: CalendarProps) {
       <DayEntry
         key={dateString}
         date={dateString}
-        focused={date.getMonth() === props.selectedMonth}
+        focused={date.getMonth() === month}
       />,
     );
   }
