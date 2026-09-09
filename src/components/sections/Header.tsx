@@ -10,7 +10,7 @@ function Header() {
         <span>Lefta</span>
       </div>
       <div className="right">
-        <span>ver. 0.0.1</span>
+        <span>ver. 0.2.0</span>
       </div>
     </header>
   );
