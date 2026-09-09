@@ -7,6 +7,8 @@ type SessionContextType = {
   setSelectedDate: React.Dispatch<React.SetStateAction<Date>>;
   selectedTab: number;
   setSelectedTab: React.Dispatch<React.SetStateAction<number>>;
+  addingExpense: boolean;
+  setAddingExpense: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
 const SessionContext = createContext<SessionContextType | null>(null);
@@ -16,6 +18,7 @@ export function SessionProvider({ children }: { children: React.ReactNode }) {
   const [selectedDate, setSelectedDate] = useState<Date>(today);
   const [selectedTab, setSelectedTab] = useState<number>(0);
   const [calendarDate, setCalendarDate] = useState<Date>(today);
+  const [addingExpense, setAddingExpense] = useState<boolean>(false);
 
   return (
     <SessionContext.Provider
@@ -26,6 +29,8 @@ export function SessionProvider({ children }: { children: React.ReactNode }) {
         setSelectedDate,
         selectedTab,
         setSelectedTab,
+        addingExpense,
+        setAddingExpense,
       }}
     >
       {children}

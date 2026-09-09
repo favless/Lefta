@@ -10,9 +10,8 @@ import { useExpenses } from "../../context/ExpenseContext";
 
 function ExpenseEntryAdd() {
   const { categories } = useCategories();
-  const { selectedDate } = useSession();
+  const { selectedDate, addingExpense, setAddingExpense } = useSession();
   const { expenses, setExpenses } = useExpenses();
-  const [menuOpened, setMenuOpened] = useState(false);
 
   const [name, setName] = useState("");
   const [amount, setAmount] = useState("");
@@ -32,25 +31,15 @@ function ExpenseEntryAdd() {
     setAmount("");
     setName("");
     setCategory("");
-    setMenuOpened(false);
+    setAddingExpense(false);
   }
 
   return (
-    <div className={style.container}>
-      <div
-        className={style.prompt}
-        style={menuOpened ? { display: "none" } : { display: "flex" }}
-        onClick={() => setMenuOpened(true)}
-      >
-        <div className={style["icon-container"]}>
-          <Icon type="app/plus" />
-        </div>
-        <span className={style.label}>Add Expense</span>
-      </div>
-      <div
-        className={style.form}
-        style={menuOpened ? { display: "flex" } : { display: "none" }}
-      >
+    <div
+      className={style.container}
+      style={addingExpense ? { display: "flex" } : { display: "none" }}
+    >
+      <div className={style.form}>
         <input
           type="text"
           value={name}
@@ -75,7 +64,7 @@ function ExpenseEntryAdd() {
         </select>
         <div className={style.buttons}>
           <button onClick={() => submitExpense()}>Add Expense</button>
-          <button onClick={() => setMenuOpened(false)}>Cancel</button>
+          <button onClick={() => setAddingExpense(false)}>Cancel</button>
         </div>
       </div>
     </div>

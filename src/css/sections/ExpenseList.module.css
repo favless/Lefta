@@ -8,3 +8,22 @@
 
     overflow-y: auto;
 }
+
+.addBtn {
+    height: 34px;
+    width: 34px;
+    border: none;
+    background-color: color-mix(in srgb, var(--accent) 50%, var(--section-bg) 50%);
+    border-radius: var(--border-radius);
+    cursor: pointer;
+}
+
+.addBtn svg {
+    background-color: var(--section-bg);
+    height: 100%;
+    width: 100%;
+}
+
+.addBtn:hover {
+    background-color: color-mix(in srgb, var(--accent) 60%, var(--section-bg) 40%);
+}
