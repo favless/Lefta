@@ -5,12 +5,12 @@ import "../../css/sections/CalendarHeader.css";
 import { useSession } from "../../context/SessionContext";
 
 function CalendarHeader() {
-  const { selectedDate, setSelectedDate } = useSession();
+  const { calendarDate, setCalendarDate } = useSession();
 
-  const year = selectedDate.getFullYear();
-  const month = selectedDate.getMonth();
+  const year = calendarDate.getFullYear();
+  const month = calendarDate.getMonth();
 
-  const monthDisplay = selectedDate.toLocaleString("default", {
+  const monthDisplay = calendarDate.toLocaleString("default", {
     month: "long",
     year: "numeric",
   });
@@ -18,7 +18,7 @@ function CalendarHeader() {
   function incrementMonth(increment: boolean) {
     const newDate = new Date(year, month + (increment ? 1 : -1));
 
-    setSelectedDate(newDate);
+    setCalendarDate(newDate);
   }
 
   return (

@@ -1,8 +1,8 @@
 import React, { createContext, useContext, useState } from "react";
 
 type SessionContextType = {
-  monthDisplay: number;
-  setMonthDisplay: React.Dispatch<React.SetStateAction<number>>;
+  calendarDate: Date;
+  setCalendarDate: React.Dispatch<React.SetStateAction<Date>>;
   selectedDate: Date;
   setSelectedDate: React.Dispatch<React.SetStateAction<Date>>;
   selectedTab: number;
@@ -15,13 +15,13 @@ export function SessionProvider({ children }: { children: React.ReactNode }) {
   const today = new Date();
   const [selectedDate, setSelectedDate] = useState<Date>(today);
   const [selectedTab, setSelectedTab] = useState<number>(0);
-  const [monthDisplay, setMonthDisplay] = useState<number>(today.getMonth());
+  const [calendarDate, setCalendarDate] = useState<Date>(today);
 
   return (
     <SessionContext.Provider
       value={{
-        monthDisplay,
-        setMonthDisplay,
+        calendarDate,
+        setCalendarDate,
         selectedDate,
         setSelectedDate,
         selectedTab,

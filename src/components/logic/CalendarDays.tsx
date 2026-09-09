@@ -2,9 +2,9 @@ import { useSession } from "../../context/SessionContext";
 import DayEntry from "./DayEntry";
 
 function CalendarDays() {
-  const { selectedDate, monthDisplay } = useSession();
-  const year = selectedDate.getFullYear();
-  const month = selectedDate.getMonth();
+  const { calendarDate } = useSession();
+  const year = calendarDate.getFullYear();
+  const month = calendarDate.getMonth();
 
   // convert into Monday-based value instead of the default JS Sunday-based
   const firstDay = (new Date(year, month, 1).getDay() + 6) % 7;
